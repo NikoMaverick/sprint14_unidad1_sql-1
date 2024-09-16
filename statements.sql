@@ -42,7 +42,7 @@ SELECT nombre, edad FROM user_sprint14_unidad1.usuarios_lenguajes ORDER BY edad 
 
 -- Ejercicio 11: Seleccionar los usuarios y sus edades ordenados por edad de forma descendente.
 -- Tu respuesta aquí
-SELECT nombre, edad FROM user_sprint14_unidad1.usuarios_lenguajes ORDER BY edad DESC
+SELECT nombre, edad FROM user_sprint14_unidad1.usuarios_lenguajes ORDER BY edad DESC;
 
 -- Ejercicio 12: Contar cuántos usuarios tienen más de 28 años.
 -- Tu respuesta aquí
@@ -54,43 +54,43 @@ SELECT * FROM user_sprint14_unidad1.usuarios_lenguajes WHERE apellido LIKE'%a%';
 
 -- Ejercicio 14: Encontrar el lenguaje más popular entre los usuarios menores de 30 años.
 -- Tu respuesta aquí
-SELECT lenguaje, COUNT(*) AS lenguaje_popular FROM user_sprint14_unidad1.usuarios_lenguajes WHERE edad < 30 GROUP BY lenguaje ORDER BY lenguaje_popular -- No resuelto
+SELECT lenguaje, COUNT(*) AS lenguaje_popular FROM user_sprint14_unidad1.usuarios_lenguajes WHERE edad < 30 GROUP BY lenguaje ORDER BY lenguaje_popular; -- No resuelto
 
 -- Ejercicio 15: Seleccionar el usuario  mayor de 25 y que sepa el lenguaje 'TypeScript'.
 -- Tu respuesta aquí
-
+SELECT * FROM user_sprint14_unidad1.usuarios_lenguajes WHERE edad > 25 AND lenguaje LIKE 'TypeScript';
 
 -- Ejercicio 16: Contar cuántos usuarios tienen un lenguaje asociado llamado 'Python'.
 -- Tu respuesta aquí
-
+SELECT COUNT(*) AS numero_usuarios FROM user_sprint14_unidad1.usuarios_lenguajes WHERE lenguaje LIKE 'Python';
 
 -- Ejercicio 17: Seleccionar los usuarios y sus lenguajes asociados, si tienen alguno, ordenados por nombre de usuario.
 -- Tu respuesta aquí
-
+SELECT nombre, lenguaje FROM user_sprint14_unidad1.usuarios_lenguajes WHERE lenguaje IS NOT NULL ORDER BY nombre ASC;
 
 -- Ejercicio 18: Encontrar los usuario con el email que contiene la palabra 'example'.
 -- Tu respuesta aquí
-
+SELECT * FROM user_sprint14_unidad1.usuarios_lenguajes WHERE email LIKE '%example%';
 
 -- Ejercicio 19: Seleccionar los usuarios que saben al menos un lenguaje y tienen una edad entre 25 y 35 años.
 -- Tu respuesta aquí
-
+SELECT * FROM user_sprint14_unidad1.usuarios_lenguajes WHERE lenguaje IS NOT NULL AND edad BETWEEN 25 AND 35;
 
 -- Ejercicio 20: Contar cuántos usuarios tienen un lenguaje asociado llamado 'CSS' y tienen menos de 30 años.
 -- Tu respuesta aquí
-
+SELECT nombre, lenguaje FROM user_sprint14_unidad1.usuarios_lenguajes WHERE lenguaje LIKE 'CSS' AND edad < 30;
 
 -- Ejercicio 21: Seleccionar los usuarios que tienen al menos un lenguaje asociado y mostrar la cantidad de lenguajes que tienen.
 -- Tu respuesta aquí
-
+SELECT nombre, lenguaje FROM user_sprint14_unidad1.usuarios_lenguajes WHERE lenguaje LIKE '' IS NOT NULL ORDER BY; -- No resuelto
 
 -- Ejercicio 22: Encontrar el lenguaje con más caracteres.
 -- Tu respuesta aquí
-
+SELECT * FROM user_sprint14_unidad1.usuarios_lenguajes ORDER BY LENGTH(lenguaje) DESC LIMIT 1;
 
 -- Ejercicio 23: Seleccionar los usuarios y mostrar la concatenación de su nombre y apellido.
 -- Tu respuesta aquí
-
+SELECT CONCAT (nombre, ' ',  apellido) AS nombre_completo FROM user_sprint14_unidad1.usuarios_lenguajes;
 
 -- Ejercicio 24: Contar cuántos lenguajes diferentes conocen los usuarios mayores de 25 años. 
 -- Tu respuesta aquí
